@@ -16,7 +16,7 @@ case class BeaverPhotosTopic(beaverId: String) extends Topic {
 }
 ```
 
-Actors can subscribe to `MessageBus` with `Subscribe` message (for Comets they will be ussually sent in `localStartup` method):
+Actors can subscribe to `MessageBus` with `Subscribe` message (for Comets they will be usually sent in `localStartup` method):
 
 ```
 MessageBus ! Subscribe(listener1, WombatPhotosTopic("1"))
