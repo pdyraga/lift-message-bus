@@ -1,4 +1,4 @@
-package net.liftmodules.bus
+package net.liftmodules.messagebus
 
 /**
   * Topic instances can be perceived as a street advertising columns. Components interested in some

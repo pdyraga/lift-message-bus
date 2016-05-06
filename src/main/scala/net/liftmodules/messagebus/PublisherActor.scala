@@ -1,4 +1,4 @@
-package net.liftmodules.bus
+package net.liftmodules.messagebus
 
 import net.liftweb.actor._
 
