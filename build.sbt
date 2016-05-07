@@ -1,4 +1,4 @@
-name := "lift-messagebus"
+name := "messagebus"
 
 organization := "net.liftmodules"
 
@@ -18,8 +18,8 @@ scalacOptions ++= Seq("-unchecked", "-deprecation")
 
 scalacOptions in Test ++= Seq("-Yrangepos")
 
-resolvers ++= Seq("snapshots"      at "https://oss.sonatype.org/content/repositories/snapshots",
-                  "releases"       at "https://oss.sonatype.org/content/repositories/releases",
+resolvers ++= Seq("sonatype-snapshots"      at "https://oss.sonatype.org/content/repositories/snapshots",
+                  "sonatype-releases"       at "https://oss.sonatype.org/content/repositories/releases",
                   "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
                  )
 
@@ -30,11 +30,17 @@ libraryDependencies <++= liftVersion { v =>
   )
 }
 
+useGpg := true
+
+usePgpKeyHex("B41A0844")
+
 //publishTo in ThisBuild := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))
-publishTo <<= version { _.endsWith("SNAPSHOT") match {
-    case true  => Some("snapshots" at "https://oss.sonatype.org/content/repositories/snapshots")
-    case false => Some("releases" at "https://oss.sonatype.org/service/local/staging/deploy/maven2")
-  }
+publishTo := {
+  val nexus = "https://oss.sonatype.org/"
+  if (isSnapshot.value)
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases"  at nexus + "service/local/staging/deploy/maven2")
 }
 
 // For local deployment:
