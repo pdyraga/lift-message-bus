@@ -51,7 +51,7 @@ pomIncludeRepository := { _ => false }
 
 
 pomExtra := (
-  <url>https://github.com/liftmodules/machine</url>
+  <url>https://github.com/pdyraga/lift-message-bus</url>
   <licenses>
     <license>
       <name>Apache 2.0 License</name>
