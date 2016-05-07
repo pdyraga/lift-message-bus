@@ -60,12 +60,12 @@ pomExtra := (
     </license>
   </licenses>
   <scm>
-    <url>git@github.com:liftmodules/machine.git</url>
-    <connection>scm:git:git@github.com:liftmodules/machine.git</connection>
+    <url>git@github.com:pdyraga/lift-message-bus.git</url>
+    <connection>scm:git:git@github.com:pdyraga/lift-message-bus.git</connection>
   </scm>
   <developers>
     <developer>
-      <id>liftmodules</id>
+      <id>piotrd</id>
       <name>Piotr Dyraga</name>
       <url>http://www.ontheserverside.com</url>
     </developer>
