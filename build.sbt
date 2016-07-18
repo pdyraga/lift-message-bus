@@ -4,13 +4,13 @@ organization := "net.liftmodules"
 
 version := "1.0"
 
-liftVersion <<= liftVersion ?? "3.0-RC1"
+liftVersion <<= liftVersion ?? "2.6.2"
 
 liftEdition <<= liftVersion apply { _.substring(0,3) }
 
 moduleName <<= (name, liftEdition) { (n, e) =>  n + "_" + e }
 
-scalaVersion := "2.11.7"
+scalaVersion := "2.10.5"
 
 crossScalaVersions := Seq("2.11.0", "2.10.0", "2.9.2", "2.9.1-1", "2.9.1")
 
@@ -26,7 +26,7 @@ resolvers ++= Seq("sonatype-snapshots"      at "https://oss.sonatype.org/content
 libraryDependencies <++= liftVersion { v =>
   Seq(
     "net.liftweb" %% "lift-webkit" % v         % "provided",
-    "org.specs2"  %% "specs2-core" % "3.0"     % "test"
+    "org.specs2"  %% "specs2-core" % "3.1"     % "test"
   )
 }
 
