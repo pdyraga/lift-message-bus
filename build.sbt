@@ -4,15 +4,15 @@ organization := "net.liftmodules"
 
 version := "1.0"
 
-liftVersion <<= liftVersion ?? "3.0.1"
+liftVersion <<= liftVersion ?? "3.1.0"
 
 liftEdition <<= liftVersion apply { _.substring(0,3) }
 
 moduleName <<= (name, liftEdition) { (n, e) =>  n + "_" + e }
 
-scalaVersion := "2.12.2"
+scalaVersion := "2.11.12"
 
-crossScalaVersions := Seq("2.11.0", "2.10.0", "2.9.2", "2.9.1-1", "2.9.1")
+crossScalaVersions := Seq("2.11.12", "2.10.0", "2.9.2", "2.9.1-1", "2.9.1")
 
 scalacOptions ++= Seq("-unchecked", "-deprecation")
 
